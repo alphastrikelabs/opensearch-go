@@ -27,11 +27,11 @@
 package opensearchapi
 
 // API contains the OpenSearch APIs
-//
 type API struct {
 	Cat      *Cat
 	Cluster  *Cluster
 	Indices  *Indices
+	Role     *Role
 	Ingest   *Ingest
 	Nodes    *Nodes
 	Remote   *Remote
@@ -176,6 +176,12 @@ type Indices struct {
 	UpdateAliases         IndicesUpdateAliases
 	Upgrade               IndicesUpgrade
 	ValidateQuery         IndicesValidateQuery
+}
+
+// Role contains the Role APIs
+type Role struct {
+	CreateRole        RoleCreate
+	CreateRoleMapping RoleMappingCreate
 }
 
 // Ingest contains the Ingest APIs
@@ -354,6 +360,10 @@ func New(t Transport) *API {
 			UpdateAliases:         newIndicesUpdateAliasesFunc(t),
 			Upgrade:               newIndicesUpgradeFunc(t),
 			ValidateQuery:         newIndicesValidateQueryFunc(t),
+		},
+		Role: &Role{
+			CreateRole:        newRoleCreateFunc(t),
+			CreateRoleMapping: newRoleMappingCreateFunc(t),
 		},
 		Ingest: &Ingest{
 			DeletePipeline: newIngestDeletePipelineFunc(t),
