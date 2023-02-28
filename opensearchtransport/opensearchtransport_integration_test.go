@@ -24,6 +24,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build integration
 // +build integration
 
 package opensearchtransport_test
@@ -39,8 +40,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/opensearch-project/opensearch-go/v2/opensearchtransport"
-	"github.com/opensearch-project/opensearch-go/v2/opensearchutil"
+	"github.com/alphastrikelabs/opensearch-go/v2/opensearchtransport"
+	"github.com/alphastrikelabs/opensearch-go/v2/opensearchutil"
 )
 
 var (

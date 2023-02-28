@@ -57,8 +57,8 @@ test-coverage:  ## Generate test coverage report
 ##@ Development
 lint:  ## Run lint on the package
 	@printf "\033[2m→ Running lint...\033[0m\n"
-	go vet github.com/opensearch-project/opensearch-go/...
-	go list github.com/opensearch-project/opensearch-go/... | 'grep' -v internal | xargs golint -set_exit_status
+	go vet github.com/alphastrikelabs/opensearch-go/...
+	go list github.com/alphastrikelabs/opensearch-go/... | 'grep' -v internal | xargs golint -set_exit_status
 	@{ \
 		set -e ; \
 		trap "test -d ../../../.git && git checkout --quiet go.mod" INT TERM EXIT; \
@@ -146,9 +146,9 @@ endif
 godoc: ## Display documentation for the package
 	@printf "\033[2m→ Generating documentation...\033[0m\n"
 	@echo "* http://localhost:6060/pkg/github.com/opensearch-project/opensearch-go"
-	@echo "* http://localhost:6060/pkg/github.com/opensearch-project/opensearch-go/opensearchapi"
-	@echo "* http://localhost:6060/pkg/github.com/opensearch-project/opensearch-go/opensearchtransport"
-	@echo "* http://localhost:6060/pkg/github.com/opensearch-project/opensearch-go/opensearchutil"
+	@echo "* http://localhost:6060/pkg/github.com/alphastrikelabs/opensearch-go/opensearchapi"
+	@echo "* http://localhost:6060/pkg/github.com/alphastrikelabs/opensearch-go/opensearchtransport"
+	@echo "* http://localhost:6060/pkg/github.com/alphastrikelabs/opensearch-go/opensearchutil"
 	@printf "\n"
 	godoc --http=localhost:6060 --play
 
