@@ -31,6 +31,7 @@ type API struct {
 	Cat         *Cat
 	Cluster     *Cluster
 	Indices     *Indices
+	Role        *Role
 	Ingest      *Ingest
 	Nodes       *Nodes
 	Remote      *Remote
