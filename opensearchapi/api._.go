@@ -186,7 +186,9 @@ type Indices struct {
 // Role contains the Role APIs
 type Role struct {
 	CreateRole        RoleCreate
+	DeleteRole        RoleDelete
 	CreateRoleMapping RoleMappingCreate
+	DeleteRoleMapping RoleMappingDelete
 }
 
 // Ingest contains the Ingest APIs
